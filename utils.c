@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * is_printable - Evaluates if a char is printable
@@ -23,12 +23,12 @@ return (0);
  */
 int append_hexa_code(char ascii_code, char buffer[], int i)
 {
-char map_to[] = 0123456789ABCDEF;
+char map_to[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 /* The hexa format code is always 2 digits long */
 if (ascii_code < 0)
 ascii_code *= -1;
 
-buffer[i++] = '\';
+buffer[i++] = '\\';
 buffer[i++] = 'x';
 
 buffer[i++] = map_to[ascii_code / 16];
